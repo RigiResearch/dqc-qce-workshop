@@ -54,11 +54,3 @@ python3 -m http.server 8000
 
 then visit <http://localhost:8000>.
 ```
-
-## Notes
-
-* `data/` holds the source material (proposal PDF and the organizing email thread) and is
-  git-ignored, since the emails are internal. Remove it from `.gitignore` only if you
-  intend to publish those files.
-* The theme follows the QSC Canada palette: deep green `#003300` with a brighter
-  circuit-green accent. Colors are CSS variables at the top of `assets/css/site.css`.
