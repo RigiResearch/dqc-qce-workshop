@@ -53,30 +53,3 @@ python3 -m http.server 8000
 ```
 
 then visit <http://localhost:8000>.
-
-## Deploy to GitHub Pages
-
-1. Push this repository to GitHub.
-2. **Settings → Pages → Build and deployment**: source *Deploy from a branch*,
-   branch `main`, folder `/ (root)`.
-3. The site goes live at `https://<org-or-user>.github.io/<repo>/` within a minute or two.
-
-All paths are relative, so the site works from a project subpath as well as from a custom domain.
-
-## Files
-
-```
-index.html            page structure and static copy
-program.js         ★  the only file you edit: schedule, speakers, organizers
-assets/css/site.css   styling (QSC green theme, light + dark)
-assets/js/render.js   renders program.js into the page
-assets/img/favicon.svg
-```
-
-## Notes
-
-* `data/` holds the source material (proposal PDF and the organizing email thread) and is
-  git-ignored, since the emails are internal. Remove it from `.gitignore` only if you
-  intend to publish those files.
-* The theme follows the QSC Canada palette: deep green `#003300` with a brighter
-  circuit-green accent. Colors are CSS variables at the top of `assets/css/site.css`.
