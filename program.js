@@ -78,11 +78,11 @@ const SESSIONS = [
       "Error correction across modules, compiling and cutting circuits for distributed " +
       "backends, and the middleware that holds the nodes together.",
     talks: [
-      { speaker: "Hanyu Wang", affiliation: "UCLA", topic: "T.B.D.", kind: "invited", mins: 22 },
+      { speaker: "Hanyu Wang", affiliation: "UCLA", title: "T.B.D.", kind: "invited", mins: 22 },
       { kind: "invited", mins: 22 },
-      { speaker: "Ross Duncan", affiliation: "Quantinuum", topic: "T.B.D.", kind: "invited", mins: 22 },
-      { speaker: "Jonas Stein", affiliation: "LMU Munich", topic: "Distributed Training of Variational Quantum Circuits using Telegates", kind: "paper", paper: "1848", mins: 12 },
-      { speaker: "Pouya Kananian", affiliation: "University of Toronto", topic: "Quantum Architecture Search for Partitionable Variational Quantum Circuits", kind: "paper", paper: "2044", mins: 12 }
+      { speaker: "Ross Duncan", affiliation: "Quantinuum", title: "T.B.D.", kind: "invited", mins: 22 },
+      { speaker: "Jonas Stein", affiliation: "LMU Munich", title: "Distributed Training of Variational Quantum Circuits using Telegates", kind: "paper", paper: "1848", mins: 12 },
+      { speaker: "Pouya Kananian", affiliation: "University of Toronto", title: "Quantum Architecture Search for Partitionable Variational Quantum Circuits", kind: "paper", paper: "2044", mins: 12 }
     ],
     breakAfter: { label: "Lunch break", start: "11:30", end: "13:00" }
   },
@@ -96,11 +96,11 @@ const SESSIONS = [
       "Algorithms that span several QPUs, and the applications — chemistry, optimization, " +
       "machine learning — that stand to gain from them.",
     talks: [
-      { speaker: "Eleanor Rieffel", affiliation: "University of Queensland", topic: "T.B.D.", kind: "invited", mins: 22 },
+      { speaker: "Eleanor Rieffel", affiliation: "University of Queensland", title: "T.B.D.", kind: "invited", mins: 22 },
       { kind: "invited", mins: 22 },
       { kind: "invited", mins: 22 },
-      { speaker: "Grier M. Jones", affiliation: "University of Toronto", topic: "Quantifying Teleportation Overhead in Distributed Unitary Coupled-Cluster Ansätze", kind: "paper", paper: "2043", mins: 12 },
-      { speaker: "Riccardo Bassoli", affiliation: "TU Dresden", topic: "When Does Coherent Quantum Closure Phase Help? A Cross-Layer DQC Benchmark for HEP Telescope Networks", kind: "paper", paper: "1789", mins: 12 }
+      { speaker: "Grier M. Jones", affiliation: "University of Toronto", title: "Quantifying Teleportation Overhead in Distributed Unitary Coupled-Cluster Ansätze", kind: "paper", paper: "2043", mins: 12 },
+      { speaker: "Riccardo Bassoli", affiliation: "TU Dresden", title: "When Does Coherent Quantum Closure Phase Help? A Cross-Layer DQC Benchmark for HEP Telescope Networks", kind: "paper", paper: "1789", mins: 12 }
     ],
     breakAfter: { label: "Break", start: "14:30", end: "15:00" }
   },
@@ -115,7 +115,7 @@ const SESSIONS = [
       "quantum memory, and the alliances building the hardware stack.",
     talks: [
       { speaker: "Aharon Brodutch", affiliation: "IonQ", kind: "invited", mins: 22, note: "Session to be confirmed" },
-      { speaker: "Abram Falk", affiliation: "IBM", topic: "Assessing requirements for entanglement distribution in distributed quantum computing", kind: "invited", mins: 22 },
+      { speaker: "Abram Falk", affiliation: "IBM", title: "Assessing requirements for entanglement distribution in distributed quantum computing", kind: "invited", mins: 22 },
       { kind: "invited", mins: 22 },
       { kind: "invited", mins: 22 }
     ]
