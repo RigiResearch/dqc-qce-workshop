@@ -106,7 +106,9 @@ const SESSIONS = [
       "Error correction across modules, compiling and cutting circuits for distributed " +
       "backends, and the middleware that holds the nodes together.",
     talks: [
-      { speaker: "Hanyu Wang", affiliation: "UCLA", title: "T.B.D.", kind: "invited", mins: 22 },
+      { speaker: "Hanyu Wang", affiliation: "UCLA", title: "Structure-Aware Synthesis for Fault-Tolerant Quantum Compilation", kind: "invited", mins: 22,
+        abstract: `Fault-tolerant quantum computing requires efficient compilation across multiple abstraction levels, from constructing logical circuits to executing them on specific hardware. In this talk, I will present our recent work on structure-aware synthesis and compilation. First, I will discuss how structure in quantum states and arithmetic functions can be exploited to synthesize resource-efficient fault-tolerant circuits, with an emphasis on reducing costly non-Clifford operations. I will then turn to backend-specific execution, such as lattice-surgery compilation for superconducting qubits. These results illustrate how exploiting structure at both the circuit and architecture levels can reduce the cost of fault-tolerant quantum computation and provide an accurate input for design partitioning for multi-QPU designs with quantum networking.`,
+       },
       { speaker: "Anita Buckley", affiliation: "USI", title: "Formal reasoning about quantum networks - Specification and verification of quantum network protocols", kind: "invited", mins: 22,
           abstract: `Abstract: We present BellKAT, an expressive language for specification, verification, and optimization of quantum network protocols for Bell pair distribution. BellKAT comes with a novel algebraic structure based on Kleene algebra, providing a sound and complete axiomatization that enables equational reasoning.
 Probabilistic BellKAT extends the language with primitives for expressing probabilistic and nondeterministic behavior, along with semantics designed for quantitative analysis of real-world protocols. We further implement a tool to automate the use of BellKAT for protocol verification and optimization.`,
@@ -156,7 +158,12 @@ Probabilistic BellKAT extends the language with primitives for expressing probab
       "Networked quantum processors in practice: entanglement distribution, interconnects, " +
       "quantum memory, and the alliances building the hardware stack.",
     talks: [
-      { speaker: "Aharon Brodutch", title: "T.B.D.", affiliation: "IonQ", kind: "invited", mins: 22},
+      { speaker: "Aharon Brodutch", title: "Assessing requirements for entanglement distribution in distributed quantum computing", affiliation: "IonQ", kind: "invited", mins: 22,
+        abstract: `Distributed quantum computers will require a method to exchange entanglement between quantum processing units. Two main metrics for entanglement distribution are the rate at which entanglement is generated and the fidelity of the entangled pairs. I will examine entanglement distribution in different regimes. I will show that the entanglement generation rate does not need to be high in order to exploit the distributed setting and speed up the computation (compared to using a single processor).  This result is demonstrated through numerical simulations of a partial quantum error correction task. Entanglement generation rates that are up to 5 times slower than two-qubit gates are sufficient to take advantage of a distributed quantum computer for increased parallelism [ arXiv:2512.10693]. More generally, I will discuss how we can compare different methods for entanglement distribution, with different rates and fidelities, for use in a fault-tolerant setting. 
+        
+        Joint work with Evan Dobbs, Ada Warren, Batuhan Yilmaz and Nicolas Delfosse.`,
+        bio: `Aharon Brodutch is a senior staff researcher on IonQ’s quantum error correction team. He holds a PhD in theoretical physics and quantum information from Macquarie University, and earned his M.Sc. and B.Sc. from Tel Aviv University. Between 2012 and 2020, he held postdoctoral positions at the Institute for Quantum Computing in Waterloo and the Centre for Quantum Information and Quantum Control in Toronto. He was a co-founder and CEO of Entangled Networks, a startup building solutions for distributed quantum computing, which was acquired by IonQ in 2022. Following the acquisition, he joined IonQ’s architecture team. `
+      },
       { speaker: "Alexandre Choquette", affiliation: "IBM", title: "T.B.D.", kind: "invited", mins: 22 },
       { speaker: "Robert Stockill", affiliation: "QphoX", title: "T.B.D.", kind: "invited", mins: 22 },
       { speaker: "Mathieu Juan", affiliation: "UdeS / SilQ", title: "Leveraging magnetomechanical interactions for transduction: an avenue towards distributed quantum computing", kind: "invited", mins: 22,
