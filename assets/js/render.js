@@ -60,6 +60,49 @@
   }
 
   /* ----------------------------- program -------------------------------- */
+
+  /* An optional block of prose under a talk — the abstract, or the speaker's
+     bio — collapsed by default. Blank lines in the text start a new paragraph;
+     single line breaks are just wrapping and are ignored. `context` names what
+     is being opened, so screen readers don't read a list of identical labels. */
+  function renderDisclosure(kind, label, text, context) {
+    const box = el("details", "talk-disclosure talk-" + kind);
+
+    const head = el("summary", null, label);
+    head.setAttribute("aria-label", context ? label + " — " + context : label);
+    box.appendChild(head);
+
+    const body = el("div", "disclosure-body");
+    String(text)
+      .trim()
+      .split(/\n\s*\n/)
+      .forEach((para) => body.appendChild(el("p", null, para.replace(/\s+/g, " ").trim())));
+    box.appendChild(body);
+
+    return box;
+  }
+
+  /* The abstract / bio toggles, when a talk has either. */
+  function renderMore(talk) {
+    const more = el("div", "talk-more");
+
+    if (talk.abstract) {
+      more.appendChild(
+        renderDisclosure(
+          "abstract", "Abstract", talk.abstract,
+          talk.title || talk.topic || talk.speaker || "this talk"
+        )
+      );
+    }
+    if (talk.bio) {
+      more.appendChild(
+        renderDisclosure("bio", "Bio", talk.bio, talk.speaker || "the speaker")
+      );
+    }
+
+    return more;
+  }
+
   function renderTalk(talk, clock) {
     const row = el("li", "talk" + (talk.speaker ? "" : " is-tba"));
 
@@ -86,6 +129,7 @@
     const detail = talk.title || talk.topic;
     if (detail) body.appendChild(el("p", "talk-topic", detail));
     if (talk.note) body.appendChild(el("span", "talk-note", talk.note));
+    if (talk.abstract || talk.bio) body.appendChild(renderMore(talk));
     row.appendChild(body);
 
     /* tag */

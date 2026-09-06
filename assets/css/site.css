@@ -244,6 +244,41 @@ a:hover { color: var(--brand-600); }
   display: inline-block; margin-top: .35rem; font-size: .74rem; color: var(--ink-2);
   border: 1px dashed var(--line); border-radius: 6px; padding: .1rem .45rem;
 }
+/* optional abstract / bio: small toggles that open under the talk.
+   Closed, they sit side by side; opening one gives it a row of its own. */
+.talk-more { display: flex; flex-wrap: wrap; gap: .4rem .45rem; margin-top: .5rem; }
+.talk-more > .talk-disclosure { flex: 0 0 auto; min-width: 0; }
+.talk-more > .talk-disclosure[open] { flex: 1 0 100%; }
+
+.talk-disclosure > summary {
+  display: inline-flex; align-items: center; gap: .38rem; width: fit-content; cursor: pointer;
+  font-family: var(--mono); font-size: .69rem; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--brand-700); background: var(--paper);
+  border: 1px solid var(--line); border-radius: 999px; padding: .16rem .6rem;
+  list-style: none; -webkit-user-select: none; user-select: none;
+  transition: background .15s ease, border-color .15s ease;
+}
+.talk-disclosure > summary::-webkit-details-marker { display: none; }
+.talk-disclosure > summary::before {
+  content: ""; flex: none;
+  border-left: 4.5px solid currentColor;
+  border-top: 3.5px solid transparent; border-bottom: 3.5px solid transparent;
+  transition: transform .15s ease;
+}
+.talk-disclosure[open] > summary::before { transform: rotate(90deg); }
+.talk-disclosure > summary:hover {
+  background: var(--surface-2); border-color: color-mix(in srgb, var(--accent) 45%, transparent);
+}
+@media (prefers-color-scheme: dark) { .talk-disclosure > summary { color: var(--accent-lt); } }
+@media (prefers-reduced-motion: reduce) { .talk-disclosure > summary::before { transition: none; } }
+
+.disclosure-body {
+  margin: .6rem 0 .2rem; padding-left: .9rem; max-width: 76ch;
+  border-left: 2px solid color-mix(in srgb, var(--accent) 38%, transparent);
+}
+.disclosure-body p { font-size: .89rem; color: var(--ink-2); margin: 0 0 .65rem; }
+.disclosure-body p:last-child { margin-bottom: 0; }
+
 .talk-tag {
   font-family: var(--mono); font-size: .7rem; letter-spacing: .07em; text-transform: uppercase;
   color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: .2rem .55rem; white-space: nowrap;
@@ -262,6 +297,8 @@ a:hover { color: var(--brand-600); }
 @media (max-width: 620px) {
   .talk { grid-template-columns: 1fr auto; gap: .5rem .8rem; }
   .talk-when { grid-column: 1 / -1; order: -1; }
+  /* a comfortable tap target for the abstract / bio toggles */
+  .talk-disclosure > summary { padding: .45rem .85rem; }
 }
 
 /* ------------------------------ speakers -------------------------------- */
